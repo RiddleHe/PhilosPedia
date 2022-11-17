@@ -129,6 +129,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'philos_pedia', 'static')
+
 
 
 LOGIN_URL = '/users/login/'
@@ -154,7 +156,7 @@ if os.getcwd() == '/app':
 
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = 'staticfiles'
+    STATIC_ROOT = os.path.join(BASE_DIR, 'philos_pedia', 'static')
     STATICFILES_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
