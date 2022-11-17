@@ -1,0 +1,42 @@
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #faa;
+  background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.history.com%2Ftopics%2Fancient-history%2Fsocrates&psig=AOvVaw3EXBn5krU07fSL7Gz_Q7Q4&ust=1668720270947000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCKDkzsnRs_sCFQAAAAAdAAAAABAE");
+  background-size: cover;
+
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: .25rem;
+}
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }

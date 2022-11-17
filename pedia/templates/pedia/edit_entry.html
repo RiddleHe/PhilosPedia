@@ -1,0 +1,17 @@
+{% extends 'pedia/base.html' %}
+{% load bootstrap5 %}
+
+{% block header %}
+    <h3 class="ms-2">{{ topic.title }}</h3>
+{% endblock header %}
+
+{% block content %}
+
+        <h5 class="text-muted m-3">Edit this entry here</h5>
+        <form class="form m-3" action="{% url 'pedia:edit_entry' entry.id %}" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button class="btn btn-primary" name="submit">Edit</button>
+        </form>
+
+{% endblock content %}

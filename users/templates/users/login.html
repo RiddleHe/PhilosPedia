@@ -1,0 +1,21 @@
+{% extends 'pedia/base.html' %}
+{% load bootstrap5 %}
+
+{% block header %}
+    <div class="container">
+        <h1>Log in to your account</h1>
+    </div>
+{% endblock header %}
+
+{% block content %}
+    <section class="container">
+        <form class="form my-4 w-50" action="{% url 'users:login' %}" method="post">
+            {%csrf_token%}
+            {% bootstrap_form form %}
+            <button class="btn btn-primary mt-2" name="submit">Log In</button>
+            <input type='hidden' name='next' value="{% url 'pedia:topics' %}" />
+        </form>
+    </section>
+    
+
+{% endblock content %}

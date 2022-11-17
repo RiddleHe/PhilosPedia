@@ -1,0 +1,26 @@
+{% extends 'pedia/base.html' %}
+
+{% block header %}
+    <div class="container p-3">
+        <h2 class="ps-2">Search Results</h2>
+    </div>
+{% endblock header %}
+
+{% block content %}
+    <section>
+        <div class="list-group-flush mt-4">
+            {% if not object_list %}
+                <h4 class="ms-4">No topic found.</h4>
+            {% endif %}
+            {% for topic in object_list %}
+                <div class="list-group-item bg-light p-4">
+                    <h4><a class="text-dark text-decoration-none stretched-link" href="{% url 'pedia:topic' topic.id %}">{{topic.title}}</a></h4>
+                    <p>{{topic.description|linebreaks}}</p>
+                </div>
+            
+            {% endfor %}
+
+        </div>
+    </section>
+
+{% endblock content %}
