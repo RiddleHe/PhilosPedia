@@ -4,8 +4,14 @@
 
     <div class="container p-3">
         <div class="row">
+            <div class="col-md-6 col-lg-12 mb-4">
+                <a class="btn btn-sm btn-outline-primary" href="{% url 'pedia:topics' %}">Go back</a>
+            </div>
             <div class="col-md-6 col-lg-12">
                 <h2>{{topic.title}}</h2>
+            </div>
+            <div class="col-md-12 mt-3">
+                <p>{{topic.description}}</p>
             </div>
             <div class="col-md-6 col-lg-12 my-4">
                 <a class="btn btn-outline-primary" href="{% url 'pedia:add_entry' topic.id %}">Add a new entry</a>
@@ -29,7 +35,10 @@
                         <div class="accordion-collapse collapse show" id="collapseOne" aria-labelledby="headingOne" data-bs-parent="#accordionEntry">
                             <div class="accordion-body">
                                 <p>{{ entry.description|linebreaks}}</p>
-                                <a class="btn btn-sm btn-outline-primary" href="{% url 'pedia:edit_entry' entry.id %}">Edit entry</a>
+                                <div class="container d-flex">
+                                    <a class="btn btn-sm btn-outline-primary me-3" href="{% url 'pedia:edit_entry' entry.id %}">Edit entry</a>
+                                    <a class="btn btn-sm btn-outline-secondary" href="{% url 'pedia:delete_entry' entry.id %}">Delete entry</a>
+                                </div>
                             </div>
 
                         </div>

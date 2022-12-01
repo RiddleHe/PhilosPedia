@@ -95,6 +95,18 @@ def edit_entry(request, entry_id):
     context = {'entry': entry, 'form': form, 'topic': topic}
     return render(request, 'pedia/edit_entry.html', context)
 
+def delete_entry(request, entry_id):
+    """Delete an entry"""
+    
+    entry = Entry.objects.get(id=entry_id)
+    topic = entry.topic
+
+    if entry.owner == request.user:
+        entry.delete()
+    
+    return HttpResponseRedirect(reverse('pedia:topic', args=[topic.id]))
+
+
 class SearchResultsView(ListView):
     """Load a search result page"""
     model = Topic
