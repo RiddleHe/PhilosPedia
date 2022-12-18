@@ -23,12 +23,12 @@
         <div class="container">
             <div class="row">
                 {% for new_topic in newest_topics %}
-                    <div class="col-md-4">
+                    <div class="col-md-4 d-grid">
                         <div class="card mb-4 box-shadow">
                             <div class="card-body text-center m-3">
                                 <h5 class="card-title">{{new_topic.title}}</h5>
-                                <p class="card-text">{{new_topic.description}}</p>
-                                <a class="btn btn-outline-primary" href="{% url 'pedia:topic' new_topic.id %}">Read</a>
+                                <p class="card-text mt-3">{{new_topic.description}}</p>
+                                <a class="btn btn-outline-primary mt-3" href="{% url 'pedia:topic' new_topic.id %}">Read</a>
                             </div>
                         </div>
                     </div>
